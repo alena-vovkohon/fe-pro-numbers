@@ -62,10 +62,11 @@ console.log(fixedValue); // 2.235
 
 export const getFlooroCeil = (number) => {
     let numberNew;
-    if (number < 0) {
-        numberNew = Math.ceil(number)
+    if (number >0) {
+       numberNew = Math.floor(number)
     } else {
-        numberNew = Math.floor(number)
+        
+        numberNew = Math.ceil(number)
     }
     return numberNew
 };
