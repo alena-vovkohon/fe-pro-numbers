@@ -45,8 +45,10 @@ console.log(square); // 50.26548245743669
  */
 
 export const getFixedValue = (number, accuracy) => {
-    let numberRoundNew = Number(number.toFixed(accuracy))
-    return numberRoundNew
+
+    let numberRound = Math.round(number * Math.pow(10, accuracy)) / Math.pow(10, accuracy)
+    
+    return numberRound
 };
 
 const fixedValue = getFixedValue(3.2345, 3);
