@@ -7,7 +7,17 @@
  * @param {number} maxSecond
  * @returns {number}
  */
-export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {};
+
+export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {
+    let maxNumber = Math.max(maxFirst, maxSecond)
+    let minNumber = Math.min(minFirst, minSecond)
+    let result = maxNumber * minNumber
+    return result
+};
+
+const minMaxMultiplyResult = minMaxMultiply(2, 3, 4, 5);
+
+console.log(minMaxMultiplyResult); // 10
 
 /**
  * Функция принимает один числовой аргумент, это радиус круга. Функция должна
@@ -16,8 +26,15 @@ export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {};
  * @param {number} radius
  * @returns {number}
  */
-export const getSquareOfCircle = (radius) => {};
 
+export const getSquareOfCircle = (radius) => {
+    let square = Math.PI * Math.pow(radius, 2)
+    return square
+};
+
+const square = getSquareOfCircle(4);
+
+console.log(square); // 50.26548245743669
 /**
  * Функция принимает число и точность к которой нужно округлить
  * Примеры можно смотреть в checks.js
@@ -26,7 +43,15 @@ export const getSquareOfCircle = (radius) => {};
  * @param {number} accuracy
  * @returns {number}
  */
-export const getFixedValue = (number, accuracy) => {};
+
+export const getFixedValue = (number, accuracy) => {
+    let numberRoundNew = Number(number.toFixed(accuracy))
+    return numberRoundNew
+};
+
+const fixedValue = getFixedValue(3.2345, 3);
+
+console.log(fixedValue); // 2.235
 
 /**
  * Если целая часть числа четная, то срабатывает Math.floor для этого числа
@@ -34,7 +59,19 @@ export const getFixedValue = (number, accuracy) => {};
  * @param {number} number
  * @returns {number}
  */
-export const getFlooroCeil = (number) => {};
+
+export const getFlooroCeil = (number) => {
+    let numberNew;
+    if (number < 0) {
+        numberNew = Math.ceil(number)
+    } else {
+        numberNew = Math.floor(number)
+    }
+    return numberNew
+};
+
+console.log(getFlooroCeil(3.235)); // 4
+console.log(getFlooroCeil(4.235)); // 4
 
 /**
  * Мы передаем два числа, от какого и до какого числа и функция должна
@@ -44,4 +81,10 @@ export const getFlooroCeil = (number) => {};
  * @param {number} to
  * @returns {number}
  */
-export const randomizer = (from, to) => {};
+export const randomizer = (from, to) => {
+    let result = Math.round(Math.random() * (from - to) + to)
+    return result
+
+};
+
+console.log(randomizer(2, 5)); // от 2 до 5, не знаю сколько)
