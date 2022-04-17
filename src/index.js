@@ -63,11 +63,12 @@ console.log(fixedValue); // 2.235
  */
 
 export const getFlooroCeil = (number) => {
+
+    let numberParse = parseInt(number)
     let numberNew;
-    if (number >=0) {
-       numberNew = Math.floor(number)
+    if (numberParse % 2 === 0) {
+        numberNew = Math.floor(number)
     } else {
-        
         numberNew = Math.ceil(number)
     }
     return numberNew
@@ -75,7 +76,6 @@ export const getFlooroCeil = (number) => {
 
 console.log(getFlooroCeil(3.235)); // 4
 console.log(getFlooroCeil(4.235)); // 4
-
 /**
  * Мы передаем два числа, от какого и до какого числа и функция должна
  * выдать ЦЕЛОЕ число в этом диапазоне. Постарайтесь подумать, не гуглите сразу
